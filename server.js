@@ -12,7 +12,8 @@ dotenv.config();
   
 const app = express();
 const ENVIRONMET = process.env.NODE_ENVIRONMENT;
-const PORT = process.env[`${ENVIRONMET}_SERVER_PORT`];
+const PORT = process.env.PORT || 4000;
+
 
 //middleware setup
 
