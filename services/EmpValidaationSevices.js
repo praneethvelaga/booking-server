@@ -3,7 +3,7 @@ const db = require('../db/db.js');
 async function validateEmployee(cardNumber, EmployeeName, EmployeeWifeName, bookingDate = new Date()) {
     try {
         // Step 1: Check if employee exists
-        let query = `SELECT EmployeeID FROM Employees WHERE EmployeeID = ? AND (`;
+        let query = `SELECT EmployeeID FROM rtc_employees WHERE EmployeeID = ? AND (`;
         const params = [cardNumber];
         if (EmployeeName) {
             query += 'EmployeeName = ?';
