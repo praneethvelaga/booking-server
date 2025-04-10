@@ -76,7 +76,6 @@ async function ReservationServices(busId, seatNumbers, passengerName, userId, bo
         return { error: true, message: "Failed to book seats", detail: err.message };
     }
 }
-
 module.exports = {
     ReservationServices,
 };

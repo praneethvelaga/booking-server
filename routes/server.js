@@ -6,7 +6,7 @@ const Constituencies = require('./Constituencies.js')
 const Buseslist= require('./BusesList.js')
 const EmpValidation= require('./EmpValidation.js')
 const BuseSeatReservation = require('./SeatReservation.js');
-
+const reservedSetas = require('./reservedSeats.js')
 
 const assingRoutes=(app)=>{
 app.use(device.capture())
@@ -18,6 +18,7 @@ app.use('/api/buseslist',Buseslist.BusesList());
 app.use('/api/buses',Buseslist.BusById());
 app.use('/api/Validation',EmpValidation.ValidationByEmpId());
 app.use('/api/bookingSeats',BuseSeatReservation.Reservation());
+app.use('/api/reservations',reservedSetas.ReservationSeats());
 }
 
 module.exports = assingRoutes;
