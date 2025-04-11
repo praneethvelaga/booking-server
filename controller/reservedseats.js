@@ -9,6 +9,7 @@ const ReservationSeats = async (req, res) => {
     }
 
     const bookedSeats = await ReservationSeatsn(busId);
+    console.log(bookedSeats)
     res.json(bookedSeats || []);
   } catch (error) {
     console.error("Error fetching booked seats:", error);
