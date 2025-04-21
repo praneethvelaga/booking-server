@@ -7,6 +7,7 @@ const Buseslist= require('./BusesList.js')
 const EmpValidation= require('./EmpValidation.js')
 const BuseSeatReservation = require('./SeatReservation.js');
 const reservedSetas = require('./reservedSeats.js')
+const otpRouter = require('./otpRoute.js')
 
 const assingRoutes=(app)=>{
 app.use(device.capture())
@@ -19,6 +20,10 @@ app.use('/api/buses',Buseslist.BusById());
 app.use('/api/Validation',EmpValidation.ValidationByEmpId());
 app.use('/api/bookingSeats',BuseSeatReservation.Reservation());
 app.use('/api/reservations',reservedSetas.ReservationSeats());
+app.use('/api/otp',otpRouter.sendOtp());
+app.use('/api/otp',otpRouter.verifyOtp());
+app.use('/api/otp',otpRouter.resetPassword());
+
 }
 
 module.exports = assingRoutes;
